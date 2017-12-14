@@ -3,5 +3,5 @@
 @section('titre', 'JCRU2DR - Accueil')
 
 @section('main')
-  d
+  <p> Doom </p>
 @endsection
