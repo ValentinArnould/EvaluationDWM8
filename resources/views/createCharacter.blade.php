@@ -1,6 +1,9 @@
 @extends('base')
 
-@section('titre', 'JCRU2DR - Accueil')
+@section('compléments')
+@endsection
+
+@section('titre', 'JCRU2DR - Créer un Personnage')
 
 @section('main')
 
