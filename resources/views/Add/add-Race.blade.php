@@ -9,6 +9,7 @@
 
   <h1>Nouvelle race</h1>
   <div class="container">
+
     {{ Form::open(array('url' => '/', 'method' => 'get')) }}
 
     <div class="form-group formul">
@@ -26,9 +27,10 @@
         {{ Form::text("Habitat", "",array('class' => 'form-control')) }}
     </div>
 
-    <div class="form-group formul">
+    <div class="form-group formul ajoutDons">
         {{ Form::label("Dons_Race", "Dons", array('class' => 'form-control')) }}
-        {{ Form::text("Dons", "",array('class' => 'form-control')) }}
+        {{ Form::select("Dons", $dons, "",array('class' => 'form-control', 'id' => 'dons')) }}
+        {{ Form::button("Ajouter",array('class' => 'form-control', 'id' => 'Ajoutdons'))}}
     </div>
 
     <div class="form-group formul">
@@ -40,4 +42,11 @@
     <p><a href="/add">Retour</a></p>
   </div>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#Ajoutdons').on('click', function() {
+        alert('fuuuuuuuuuck holas che si doombass');
+      });
+    });
+  </script>
 @endsection
