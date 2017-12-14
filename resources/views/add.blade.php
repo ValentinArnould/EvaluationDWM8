@@ -17,7 +17,7 @@
       <a href="/add/classe">
         {{ Form::button("Classe",array('class' => 'form-control')) }}
       </a>
-      <a href="/add/compétence">
+      <a href="/add/competence">
         {{ Form::button("Compétence",array('class' => 'form-control')) }}
       </a>
       <a href="/add/don">
@@ -28,6 +28,8 @@
       </a>
     </div>
     {{ Form::close() }}
+
+    <p><a href="/">Retour</a></p>
   </div>
 
 @endsection
