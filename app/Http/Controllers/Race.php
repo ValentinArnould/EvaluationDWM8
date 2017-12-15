@@ -23,14 +23,41 @@ class Race extends Controller
     public function inserer(Request $request)
     {
       $race = new Races();
-      
+      $race->nom = $request->nom;
+      $race->description = $request->description;
+      $race->habitat = $request->habitat;
+      $race->dons = $request->dons;
+      $race->faiblesses = $request->faiblesses;
+      $race->custom = $request->custom;
+      $race->save();
+      return redirect('/');
     }
 
     public function supprimer()
     {
-
+      $racelist = Races::all();
+      $races = [];
+      foreach ($racelist as $rpz) {
+        $races[$rpz->id] = $rpz->nom;
+      }
+      return view('/Delete/delete-Race', ['races' => $races]);
+    }
+    public function effacer(Request $request)
+    {
+      $race = Races::find($request->ChoixRace);
+      $race->delete();
+      return redirect('/');
     }
 
+    public function modif()
+    {
+      $racelist = Races::all();
+      $races = [];
+      foreach ($racelist as $rpz) {
+        $races[$rpz->id] = $rpz->nom;
+      }
+      return view('/Update/update-Race', ['races' => $races]);
+    }
     public function modifier()
     {
 

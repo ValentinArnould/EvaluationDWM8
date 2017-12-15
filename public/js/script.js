@@ -14,7 +14,7 @@ function NouveauDon(PHParray) {
     if (!($('#' + AjoutDon + 'Collapse').length)) {
       html = '<div class="DonPris">';
       html += "<p>";
-        html += '<a class="btn btn-light" data-toggle="collapse" href="#' + AjoutDon + 'Collapse" aria-expanded="false" aria-controls="' + AjoutDon + 'Collapse">';
+        html += '<a id="' + AjoutDon + '-coll"class="btn btn-light" data-toggle="collapse" href="#' + AjoutDon + 'Collapse" aria-expanded="false" aria-controls="' + AjoutDon + 'Collapse">';
           html += AjoutDon;
         html += '</a>';
         //html += '<a class="close" href="#">×</a>';
@@ -29,6 +29,18 @@ function NouveauDon(PHParray) {
       $('.DonsAjoutes').append(html);
     }
   }
+  var TotalDons = [];
+  for(compte in PHParray)
+  {
+    if($('#' + PHParray[compte].nom + '-coll').length) {
+      //alert('#' + PHParray[compte].nom + '-coll');
+      TotalDons.push(PHParray[compte].nom);
+    }
+  }
+  $('#RaceAddForm').submit(function(event) {
+    //alert(JSON.stringify(TotalDons));
+    $('.envoiDons').val(JSON.stringify(TotalDons));
+  });
 }
 
 $(document).ready(function() {
