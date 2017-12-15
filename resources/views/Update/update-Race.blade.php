@@ -56,7 +56,6 @@
     </div>
     {{ Form::close() }}
 
-    {{ var_dump($races) }}
     <p><a href="/update">Retour</a></p>
   </div>
 
