@@ -51,12 +51,26 @@ class Race extends Controller
 
     public function modif()
     {
+      $donslist = Dons::all();
+      $dons = [];
+      foreach ($donslist as $inne) {
+        $dons[$inne->id]["nom"] = $inne->nom;
+        $dons[$inne->id]["description"] = $inne->description;
+        $dons[$inne->id]["effet"] = $inne->effet;
+        $dons[$inne->id]["cout"] = $inne->cout;
+      }
       $racelist = Races::all();
       $races = [];
       foreach ($racelist as $rpz) {
-        $races[$rpz->id] = $rpz->nom;
+        $races[$rpz->id]["id"] = $rpz->id;
+        $races[$rpz->id]["nom"] = $rpz->nom;
+        $races[$rpz->id]["description"] = $rpz->description;
+        $races[$rpz->id]["habitat"] = $rpz->habitat;
+        $races[$rpz->id]["dons"] = $rpz->dons;
+        $races[$rpz->id]["faiblesses"] = $rpz->faiblesses;
+        $races[$rpz->id]["custom"] = $rpz->custom;
       }
-      return view('/Update/update-Race', ['races' => $races]);
+      return view('/Update/update-Race', ['races' => $races, 'dons' => $dons]);
     }
     public function modifier()
     {

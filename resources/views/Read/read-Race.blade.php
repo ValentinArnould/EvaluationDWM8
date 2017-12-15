@@ -33,5 +33,5 @@
          @endforeach
    </tbody>
 </table>
-<p><a href="/add">Retour</a></p>
+<p><a href="/read">Retour</a></p>
 @endsection

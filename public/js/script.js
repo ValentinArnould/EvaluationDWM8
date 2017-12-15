@@ -43,6 +43,17 @@ function NouveauDon(PHParray) {
   });
 }
 
-$(document).ready(function() {
+function ModifRace(PHParray) {
+  var ind = 0;
+  for(hey in PHParray) {
+    //alert((parseInt($( "#dons option:selected" ).val()) + 1));
+    if (PHParray[hey].nom == $( "#choixR option:selected" ).text()) {
+      ind = hey;
+      //alert(PHParray[hey].description);
+      $('#nomR').val(PHParray[ind].nom); // faire en sorte que tous les champs se remplissent de la race
+    }
+  }
+}
 
+$(document).ready(function() {
 });
