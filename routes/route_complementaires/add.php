@@ -9,3 +9,5 @@ Route::get('/add/competence', 'Competence@ajouter');
 Route::get('/add/don', 'Don@ajouter');
 
 Route::get('/add/custom', 'Custom@ajouter');
+
+Route::post('/add/race/new', 'Race@inserer');

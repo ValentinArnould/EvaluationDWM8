@@ -10,7 +10,7 @@
   <h1>Nouvelle race</h1>
   <div class="container">
 
-    {{ Form::open(array('url' => '/', 'method' => 'get')) }}
+    {{ Form::open(array('url' => '/add/race/new', 'method' => 'post')) }}
 
     <div class="form-group formul">
         {{ Form::label("Nom_Race", "Nom de la race", array('class' => 'form-control')) }}
@@ -29,7 +29,7 @@
 
     <div class="form-group formul ajoutDons">
         {{ Form::label("Dons_Race", "Dons", array('class' => 'form-control')) }}
-        {{ Form::select("Dons", $dons, "",array('class' => 'form-control', 'id' => 'dons')) }}
+        {{ Form::select("Dons",array_column($dons,"nom"), "",array('class' => 'form-control', 'id' => 'dons')) }}
         {{ Form::button("Ajouter",array('class' => 'form-control', 'id' => 'Ajoutdons'))}}
     </div>
 
@@ -37,16 +37,23 @@
         {{ Form::label("Faiblesses_Race", "Faiblesses", array('class' => 'form-control')) }}
         {{ Form::textarea("Faiblesses", "",array('class' => 'form-control', 'rows' => '3')) }}
     </div>
+    <div class="form-group formul">
+        {{ Form::submit("Création",array('class' => 'form-control', 'rows' => '3')) }}
+    </div>
     {{ Form::close() }}
 
     <p><a href="/add">Retour</a></p>
   </div>
 
   <script type="text/javascript">
+    var PHParray = @php echo json_encode($dons); @endphp;
     $(document).ready(function() {
       $('#Ajoutdons').on('click', function() {
-        alert('fuuuuuuuuuck holas che si doombass');
+        NouveauDon(PHParray);
       });
+      /*$('.close').on('click', function(){
+        $(this).parents('.DonPris').remove();
+      });*/
     });
   </script>
 @endsection
