@@ -60,6 +60,28 @@ class Race extends Controller
     }
     public function modifier()
     {
+      /*$raceList = Races::all();
+      var_dump($request->ChoixRace);
+      foreach ($raceList as $rpz) {
+        if($request->ChoixRace == 0)
+        {
 
+        }
+      }*/
+      $race = Races::find($request->ChoixRace);
+      $race->nom = $request->nom;
+      $race->description = $request->description;
+      $race->habitat = $request->habitat;
+      $race->dons = $request->dons;
+      $race->faiblesses = $request->faiblesses;
+      $race->custom = $request->custom;
+      $race->save();
+      return redirect('/');
+    }
+
+    public function voir()
+    {
+      $races = Races::all();
+      return view('/Read/read-Race', compact('races'));
     }
 }
