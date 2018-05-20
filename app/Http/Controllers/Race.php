@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Races;
 use App\Dons;
-
 class Race extends Controller
 {
     public function ajouter()
@@ -32,7 +29,6 @@ class Race extends Controller
       $race->save();
       return redirect('/');
     }
-
     public function supprimer()
     {
       $racelist = Races::all();
@@ -48,8 +44,7 @@ class Race extends Controller
       $race->delete();
       return redirect('/');
     }
-
-    public function modif()
+    public function modifier()
     {
       $donslist = Dons::all();
       $dons = [];
@@ -72,17 +67,17 @@ class Race extends Controller
       }
       return view('/Update/update-Race', ['races' => $races, 'dons' => $dons]);
     }
-    public function modifier()
+    public function update(Request $request)
     {
       /*$raceList = Races::all();
       var_dump($request->ChoixRace);
       foreach ($raceList as $rpz) {
         if($request->ChoixRace == 0)
         {
-
         }
       }*/
       $race = Races::find($request->ChoixRace);
+//      var_dump($race->nom);
       $race->nom = $request->nom;
       $race->description = $request->description;
       $race->habitat = $request->habitat;
@@ -92,7 +87,6 @@ class Race extends Controller
       $race->save();
       return redirect('/');
     }
-
     public function voir()
     {
       $races = Races::all();

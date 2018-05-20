@@ -26,7 +26,6 @@
   </div>
 
   <script type="text/javascript">
-
       /*$('.close').on('click', function(){
         $(this).parents('.DonPris').remove();
       });*/
