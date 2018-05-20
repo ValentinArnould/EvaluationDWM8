@@ -22,7 +22,7 @@
     </div>
     {{ Form::close() }}
 
-    <p><a href="/add">Retour</a></p>
+    <p><a href="/delete">Retour</a></p>
   </div>
 
   <script type="text/javascript">
