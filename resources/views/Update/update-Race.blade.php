@@ -7,7 +7,7 @@
 
 @section('main')
 
-  <h1>Nouvelle race</h1>
+  <h1>Modifier race</h1>
   <div class="container">
 
     {{ Form::open(array('url' => '/update/race/update', 'method' => 'post', 'id' => 'RaceUpdateForm')) }}

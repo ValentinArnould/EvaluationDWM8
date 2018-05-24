@@ -7,3 +7,4 @@ Route::get('/add/custom', 'Custom@ajouter');
 Route::post('/add/race/new', 'Race@inserer');
 Route::post('/add/classe/new', 'Classe@inserer');
 Route::post('/add/don/new', 'Don@inserer');
+Route::post('/add/custom/new', 'Custom@inserer');

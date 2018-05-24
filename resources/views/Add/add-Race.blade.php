@@ -54,13 +54,14 @@
 
   <script type="text/javascript">
     var PHParray = @php echo json_encode($dons); @endphp;
+    function suppress(himself) {
+      //debugger;
+      $(himself).closest('div.DonPris').remove();
+    };
     $(document).ready(function() {
       $('#Ajoutdons').on('click', function() {
         NouveauDon(PHParray);
       });
-      /*$('.close').on('click', function(){
-        $(this).parents('.DonPris').remove();
-      });*/
     });
   </script>
 @endsection

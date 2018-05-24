@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Custom extends Model
+class Customs extends Model
 {
+    protected $table = "Customs";
     public $timestamps = false;
 }

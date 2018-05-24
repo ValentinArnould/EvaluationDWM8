@@ -7,3 +7,4 @@ Route::get('/delete/custom', 'Custom@supprimer');
 Route::post('/delete/race/del', 'Race@effacer');
 Route::post('/delete/classe/del', 'Classe@effacer');
 Route::post('/delete/don/del', 'Don@effacer');
+Route::post('/delete/custom/del', 'Custom@effacer');

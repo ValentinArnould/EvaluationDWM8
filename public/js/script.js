@@ -16,8 +16,8 @@ function NouveauDon(PHParray) {
       html += "<p>";
         html += '<a id="' + AjoutDon + '-coll"class="btn btn-light" data-toggle="collapse" href="#' + AjoutDon + 'Collapse" aria-expanded="false" aria-controls="' + AjoutDon + 'Collapse">';
           html += AjoutDon;
+          html += '<a class="suppress" href="#" onClick="suppress(this)">×</a>';
         html += '</a>';
-        //html += '<a class="close" href="#">×</a>';
       html += '</p>';
       html += '<div class="collapse" id="' + AjoutDon + 'Collapse">';
         html += '<div class="card card-body">';
