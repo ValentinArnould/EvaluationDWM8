@@ -61,10 +61,33 @@
 
   <script type="text/javascript">
     var PHParray = @php echo json_encode($races); @endphp;
+    var PHParray2 = @php echo json_encode($dons); @endphp;
+    function suppress(himself) {
+      //debugger;
+      $(himself).closest('div.DonPris').remove();
+    };
+    $('#Ajoutdons').on('click', function() {
+      NouveauDon(PHParray2);
+    });
     $(document).ready(function() {
       $('#ChoixdeRace').on('click', function() {
         //alert($( "#choixR option:selected" ).text())
-        ModifRace(PHParray);
+        ModifRace(PHParray,PHParray2);
+      });
+      $('#RaceAddForm').submit(function(event) {
+        var TotalDons = [];
+        for(compte in PHParray)
+        {
+          if($('#' + PHParray2[compte].nom + '-coll').length) {
+            //alert('#' + PHParray[compte].nom + '-coll');
+            TotalDons.push(PHParray[compte].nom);
+          }
+        }
+        console.log(TotalDons);
+        debugger;
+        //alert(JSON.stringify(TotalDons));
+        $('.envoiDons').val(JSON.stringify(TotalDons));
+        return false;
       });
       /*$('.close').on('click', function(){
         $(this).parents('.DonPris').remove();

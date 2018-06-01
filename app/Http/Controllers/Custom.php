@@ -59,6 +59,6 @@ class Custom extends Controller
   public function voir()
   {
     $customs = Customs::all();
-    return view('/Read/read-Classe', compact('customs'));
+    return view('/Read/read-Custom', compact('customs'));
   }
 }

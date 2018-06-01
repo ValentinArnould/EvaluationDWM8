@@ -62,6 +62,21 @@
       $('#Ajoutdons').on('click', function() {
         NouveauDon(PHParray);
       });
+      $('#RaceAddForm').submit(function(event) {
+        var TotalDons = [];
+        for(compte in PHParray)
+        {
+          if($('#' + PHParray[compte].nom + '-coll').length) {
+            //alert('#' + PHParray[compte].nom + '-coll');
+            TotalDons.push(PHParray[compte].nom);
+          }
+        }
+        console.log(TotalDons);
+        debugger;
+        //alert(JSON.stringify(TotalDons));
+        $('.envoiDons').val(JSON.stringify(TotalDons));
+        return false;
+      });
     });
   </script>
 @endsection
